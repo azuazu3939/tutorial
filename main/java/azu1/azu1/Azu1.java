@@ -32,9 +32,15 @@ public final class Azu1 extends JavaPlugin implements Listener {
     public void onPlayerDamaged(EntityDamageEvent e) {
         World world = e.getEntity().getWorld();
         String Sw = getConfig().getString("spawn.world");
+        double x = getConfig().getDouble("spawn.x");
+        double y = getConfig().getDouble("spawn.y");
+        double z = getConfig().getDouble("spawn.z");
         if (e.getEntityType() == EntityType.PLAYER) {
             if (world.getName().equals(Sw)) {
                 e.setCancelled(true);
+
+                if (e.getCause().equals(EntityDamageEvent.DamageCause.VOID))
+                    e.getEntity().teleport(new Location(world, x, y, z, 0, 0));
         }
         }
     }
