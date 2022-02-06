@@ -1,0 +1,7 @@
+
+spawn.world: "azulobby"
+spawn.x: "0.5"
+spawn.y: "64"
+spawn.z: "0.5"
+spawn.yaw: "0"
+spawn.pitch: "0"
